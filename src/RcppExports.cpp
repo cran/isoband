@@ -5,6 +5,25 @@
 
 using namespace Rcpp;
 
+// clip_lines_impl
+List clip_lines_impl(const NumericVector& x, const NumericVector& y, const IntegerVector& id, const double p_mid_x, const double p_mid_y, const double width, const double height, const double theta, const double asp);
+RcppExport SEXP _isoband_clip_lines_impl(SEXP xSEXP, SEXP ySEXP, SEXP idSEXP, SEXP p_mid_xSEXP, SEXP p_mid_ySEXP, SEXP widthSEXP, SEXP heightSEXP, SEXP thetaSEXP, SEXP aspSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< const NumericVector& >::type x(xSEXP);
+    Rcpp::traits::input_parameter< const NumericVector& >::type y(ySEXP);
+    Rcpp::traits::input_parameter< const IntegerVector& >::type id(idSEXP);
+    Rcpp::traits::input_parameter< const double >::type p_mid_x(p_mid_xSEXP);
+    Rcpp::traits::input_parameter< const double >::type p_mid_y(p_mid_ySEXP);
+    Rcpp::traits::input_parameter< const double >::type width(widthSEXP);
+    Rcpp::traits::input_parameter< const double >::type height(heightSEXP);
+    Rcpp::traits::input_parameter< const double >::type theta(thetaSEXP);
+    Rcpp::traits::input_parameter< const double >::type asp(aspSEXP);
+    rcpp_result_gen = Rcpp::wrap(clip_lines_impl(x, y, id, p_mid_x, p_mid_y, width, height, theta, asp));
+    return rcpp_result_gen;
+END_RCPP
+}
 // isobands_impl
 List isobands_impl(const NumericVector& x, const NumericVector& y, const NumericMatrix& z, const NumericVector& value_low, const NumericVector& value_high);
 RcppExport SEXP _isoband_isobands_impl(SEXP xSEXP, SEXP ySEXP, SEXP zSEXP, SEXP value_lowSEXP, SEXP value_highSEXP) {
@@ -51,6 +70,7 @@ END_RCPP
 RcppExport SEXP run_testthat_tests();
 
 static const R_CallMethodDef CallEntries[] = {
+    {"_isoband_clip_lines_impl", (DL_FUNC) &_isoband_clip_lines_impl, 9},
     {"_isoband_isobands_impl", (DL_FUNC) &_isoband_isobands_impl, 5},
     {"_isoband_isolines_impl", (DL_FUNC) &_isoband_isolines_impl, 4},
     {"_isoband_separate_polygons", (DL_FUNC) &_isoband_separate_polygons, 3},
