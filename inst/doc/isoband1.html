@@ -12,9 +12,9 @@
 
 <meta name="author" content="Claus O. Wilke" />
 
-<meta name="date" content="2021-03-02" />
+<meta name="date" content="2021-07-12" />
 
-<title>1. Generating isolines and isobands</title>
+<title>Generating isolines and isobands</title>
 
 <script>// Pandoc 2.9 adds attributes on both header and div. We remove the former (to
 // be compatible with the behavior of Pandoc < 2.8).
@@ -40,7 +40,14 @@ document.addEventListener('DOMContentLoaded', function(e) {
     </style>
 
 
-<style type="text/css">code{white-space: pre;}</style>
+<style type="text/css">
+  code {
+    white-space: pre;
+  }
+  .sourceCode {
+    overflow: visible;
+  }
+</style>
 <style type="text/css" data-origin="pandoc">
 pre > code.sourceCode { white-space: pre; position: relative; }
 pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
@@ -323,9 +330,9 @@ code > span.er { color: #a61717; background-color: #e3d2d2; }
 
 
 
-<h1 class="title toc-ignore">1. Generating isolines and isobands</h1>
+<h1 class="title toc-ignore">Generating isolines and isobands</h1>
 <h4 class="author">Claus O. Wilke</h4>
-<h4 class="date">2021-03-02</h4>
+<h4 class="date">2021-07-12</h4>
 
 
 
@@ -436,9 +443,9 @@ code > span.er { color: #a61717; background-color: #e3d2d2; }
 <span id="cb6-16"><a href="#cb6-16" aria-hidden="true" tabindex="-1"></a>microbenchmark<span class="sc">::</span><span class="fu">microbenchmark</span>(<span class="fu">fn_contourLines</span>(), <span class="fu">fn_isolines</span>(), <span class="fu">fn_isobands</span>())</span>
 <span id="cb6-17"><a href="#cb6-17" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; Unit: milliseconds</span></span>
 <span id="cb6-18"><a href="#cb6-18" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;               expr      min       lq     mean   median       uq       max neval</span></span>
-<span id="cb6-19"><a href="#cb6-19" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;  fn_contourLines() 1.550100 1.858750 2.339805 2.091087 2.435929 10.680184   100</span></span>
-<span id="cb6-20"><a href="#cb6-20" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;      fn_isolines() 1.382175 1.437842 1.551344 1.489335 1.584526  4.567915   100</span></span>
-<span id="cb6-21"><a href="#cb6-21" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;      fn_isobands() 3.839581 4.043610 4.511119 4.225897 4.430191 26.371749   100</span></span>
+<span id="cb6-19"><a href="#cb6-19" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;  fn_contourLines() 1.684591 1.858066 2.407178 1.958155 2.451742 10.111227   100</span></span>
+<span id="cb6-20"><a href="#cb6-20" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;      fn_isolines() 1.456334 1.534420 1.640146 1.599429 1.656649  5.420189   100</span></span>
+<span id="cb6-21"><a href="#cb6-21" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;      fn_isobands() 3.986300 4.226374 4.476343 4.357670 4.496028  9.724201   100</span></span>
 <span id="cb6-22"><a href="#cb6-22" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;  cld</span></span>
 <span id="cb6-23"><a href="#cb6-23" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;   b </span></span>
 <span id="cb6-24"><a href="#cb6-24" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;  a  </span></span>

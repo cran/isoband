@@ -12,6 +12,7 @@
 #' rounding error) or by fixing the geometries using the function `st_make_valid()`.
 #' @param x The object to convert.
 #' @examples
+#' if (requireNamespace("sf", quietly = TRUE)) {
 #' library(sf)
 #' library(ggplot2)
 #'
@@ -60,7 +61,6 @@
 #'   iso2 <- st_make_valid(iso)
 #'   st_is_valid(iso2, reason=TRUE)
 #'   # the plot should be unchanged
-#'   # (this may not be the case, see ggplot2 issue #4275)
 #'   ggplot(iso2, aes(fill = id)) + geom_sf()
 #' }
 #'
@@ -71,6 +71,7 @@
 #' bands <- iso_to_sfg(raw)
 #' iso <- st_sf(id = factor(1:length(bands)), geometry = st_sfc(bands))
 #' st_is_valid(iso, reason = TRUE)
+#' }
 #' @export
 iso_to_sfg <- function(x) {
   UseMethod("iso_to_sfg", x)

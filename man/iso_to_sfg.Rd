@@ -23,6 +23,7 @@ or band limits (e.g., round all data values and then shift them by a value small
 rounding error) or by fixing the geometries using the function \code{st_make_valid()}.
 }
 \examples{
+if (requireNamespace("sf", quietly = TRUE)) {
 library(sf)
 library(ggplot2)
 
@@ -71,7 +72,6 @@ if (sf_extSoftVersion()["GEOS"] >= "3.8.0") {
   iso2 <- st_make_valid(iso)
   st_is_valid(iso2, reason=TRUE)
   # the plot should be unchanged
-  # (this may not be the case, see ggplot2 issue #4275)
   ggplot(iso2, aes(fill = id)) + geom_sf()
 }
 
@@ -82,4 +82,5 @@ raw <- isobands(1:5, 5:1, m + 1e-10, levels_low = 0:1, levels_high = 1:2)
 bands <- iso_to_sfg(raw)
 iso <- st_sf(id = factor(1:length(bands)), geometry = st_sfc(bands))
 st_is_valid(iso, reason = TRUE)
+}
 }
