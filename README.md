@@ -1,22 +1,20 @@
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
-# isoband <img width="120px" alt="isoband logo" align="right" src="man/figures/isoband-logo.png">
+# isoband <img width="120" alt="" align="right" src="man/figures/logo.png">
 
 <!-- badges: start -->
 
-[![R build
-status](https://github.com/wilkelab/isoband/workflows/R-CMD-check/badge.svg)](https://github.com/wilkelab/isoband/actions)
-[![Coverage
-Status](https://img.shields.io/codecov/c/github/wilkelab/isoband/master.svg)](https://codecov.io/github/wilkelab/isoband?branch=master)
 [![CRAN
-status](https://www.r-pkg.org/badges/version/isoband)](https://cran.r-project.org/package=isoband)
-[![Lifecycle:
-stable](https://img.shields.io/badge/lifecycle-stable-green.svg)](https://lifecycle.r-lib.org/articles/stages.html)
+status](https://www.r-pkg.org/badges/version/isoband)](https://CRAN.R-project.org/package=isoband)
+[![R-CMD-check](https://github.com/r-lib/isoband/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/r-lib/isoband/actions/workflows/R-CMD-check.yaml)
+[![Codecov test
+coverage](https://codecov.io/gh/r-lib/isoband/branch/main/graph/badge.svg)](https://app.codecov.io/gh/r-lib/isoband?branch=main)
 <!-- badges: end -->
 
 Generate contour lines (isolines) and contour polygons (isobands) from
-regularly spaced grids containing elevation data.
+regularly spaced grids containing elevation data. Package originally
+written by Claus Wilke and donated to r-lib in 2022.
 
 ## Installation
 
@@ -29,7 +27,8 @@ install.packages("isoband")
 Install the current development from github via:
 
 ``` r
-remotes::install_github("wilkelab/isoband")
+# install.packages("pak")
+pak::pak("r-lib/isoband")
 ```
 
 ## Examples
@@ -103,7 +102,7 @@ convert to sf, and plot with ggplot2.
 ``` r
 library(ggplot2)
 suppressWarnings(library(sf))
-#> Linking to GEOS 3.8.1, GDAL 3.1.4, PROJ 6.3.1
+#> Linking to GEOS 3.10.2, GDAL 3.4.2, PROJ 8.2.1; sf_use_s2() is TRUE
 
 m <- volcano
 b <- isobands((1:ncol(m))/(ncol(m)+1), (nrow(m):1)/(nrow(m)+1), m, 10*(9:19), 10*(10:20))
